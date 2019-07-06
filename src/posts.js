@@ -7,9 +7,6 @@ class Post extends React.Component {
       j: false
   }
   }
-  /*fdel = w => {
-    this.props.acdel(w);
-  };*/
   cclick = () => {
     this.props.addcom(this.state.comment,this.props.aaa.id);
   }
@@ -35,28 +32,51 @@ class Post extends React.Component {
     }
   }
   render() {
-    return (
-      <div className="col-sm-12 m-4 border">
-        <br />
-        <h2>{this.props.aaa.title}</h2>
-        <div>{this.props.aaa.post}</div>
+return (
+      <div className="row shadow p-3 mb-5 bg-white rounded">
+        <div className="col-sm-12">
+          <h4>{this.props.aaa.title}</h4>
+          
+          <hr />
+        </div>
+        <div className="col-sm-2">
+          <button className="btn btn-sm btn-info" onClick={this.delete}>Delete</button> 
+        </div>
+        <div className="col-sm-10">
+          <p>{this.props.aaa.post}</p>
+         
+          <div className="row">
+        <div className="col-lg-2">
+          <button className="btn btn-sm btn-info" onClick={this.likes}>
+            {this.props.aaa.likes} LIKES
+          </button>
+        </div>
+
+
+            <div className="col-lg-10">
         <div className="row">
-    <div className="col-*-* m-4"><button className="btn btn-secondary" onClick={this.likes} >{this.props.aaa.likes} Likes</button></div>
-    <div className="col-*-* m-4"><button className="btn btn-secondary" onClick={this.delete} >Delete</button></div>
-    <div className="col-*-* m-4"><button className="btn btn-secondary"onClick={this.cclick}><input onChange={this.comchange} placeholder="comment here"/>Add Comment</button></div>
-    <div className="col-*-* m-4"><button className="btn btn-secondary"onClick={this.showcomments}>{this.state.j?this.props.aaa.comments.map(i=>{
-                        return (
-                            <li>{i}</li>
-                            );
-                }):"Show Comments"}</button></div>
-  </div>
-        {/*<ol className="list-group">
-                {this.props.tasks.map(i=>{
-                        return (
-                            <li><List_Comp g={i.id} h={i.title} fdel={this.fdel}  ></List_Comp></li>
-                            );
-                })}
-            </ol>*/}
+          <div className="col-lg-3">Comments</div>
+          <div className="col-lg-6 form-group w-100">
+            <input className="col-*-* mt-4 mb-4 ml-4" onChange={this.comchange} placeholder="comment here"/>
+          </div>
+          <div className="col-lg-3">
+                    <button className="btn btn-default btn-sm" onClick={this.showcomments}>View Comments</button>
+                </div>
+        </div>
+      </div>
+
+      <div>{this.state.j?
+      <div>
+      {this.props.aaa.comments.map(i => {
+          return <div className="col-sm-12 shadow p-3 mb-5 bg-white rounded">
+          {i}
+      </div>
+        })}
+      </div>:""}</div>
+      </div>
+
+
+        </div>
       </div>
     );
   }

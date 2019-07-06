@@ -1,0 +1,11 @@
+{
+    "posts":[
+        {
+            "id": "undefined",
+            "title": "Demo Post", 
+            "post": "Your content is shown this way", 
+            "likes":0,
+            "comments":[]
+        }
+    ]
+}

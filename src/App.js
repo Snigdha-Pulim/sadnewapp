@@ -1,6 +1,8 @@
 import React from "react";
 import Add_post from "./addpost";
 import Post from "./posts";
+import Navbar from "./navbar";
+import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -49,22 +51,37 @@ class App extends React.Component {
       tcop: [...r]
     });
   }
+  componentDidMount() {
+    axios.get('http://localhost:3000/posts')
+    .then(a=>{
+      const persons = a.data;
+        this.setState({tcop: persons });
+    })
+}
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-4" />
+      <div>
+        <Navbar />
           <Add_post name="Share here" posts={this.add} />
-          <div className="col-sm-5" />
-          <h2>Existing Posts</h2>
-          <div className="col-sm-4" />
-          <br />
           <div>
+        <div class="container">
+          <div class="col-md-1" />
+          <div class="col-md-11">
+            <div class="row">
+              <div class="col-sm-12">
+                <h1>
+                  <i class="glyphicon glyphicon-asterisk" /> posts
+                </h1>
+                <p class="page-header lead">Blog list example for Bootstrap</p>{" "}
+              </div>
+            </div>
             {this.state.tcop.map(i => {
               return <Post aaa={i} f={this.add_likes} addcom={this.add_comment} d={this.delete_post}/>;
             })}
+            
           </div>
         </div>
+      </div>
       </div>
     );
   }
