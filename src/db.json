@@ -1,11 +1,75 @@
 {
-    "posts":[
-        {
-            "id": "undefined",
-            "title": "Demo Post", 
-            "post": "Your content is shown this way", 
-            "likes":0,
-            "comments":[]
-        }
-    ]
+  "posts": [
+    {
+      "username": "Snigdha",
+      "id": 1562448441000,
+      "title": "bbb",
+      "post": "",
+      "likes": 24,
+      "comments": [
+        "hell",
+        "goes",
+        "down"
+      ],
+      "toggle": true
+    },
+    {
+      "username": "Daanvir",
+      "id": 15624484418989,
+      "title": "I_Am_Booooo",
+      "post": "",
+      "likes": 7,
+      "comments": [],
+      "toggle": true
+    },
+    {
+      "username": "Snigdha",
+      "id": 1562446989,
+      "title": "I_Am_Goey",
+      "post": "",
+      "likes": 7,
+      "comments": [],
+      "toggle": true
+    },
+    {
+      "username": "Snigdha",
+      "id": 1563740069000,
+      "title": "jj",
+      "post": "",
+      "likes": 3,
+      "comments": [],
+      "toggle": true
+    },
+    {
+      "username": "Snigdha",
+      "id": 1563741053000,
+      "title": "Alive",
+      "post": "",
+      "likes": 0,
+      "comments": [],
+      "toggle": true
+    },
+    {
+      "username": "Harita",
+      "id": 1563742562000,
+      "title": "hello world",
+      "post": "I'm a programmer \ncan u tell?",
+      "likes": 8,
+      "comments": []
+    }
+  ],
+  "log_details": [
+    {
+      "username": "Snigdha",
+      "password": "password"
+    },
+    {
+      "username": "Daanvir",
+      "password": "password"
+    },
+    {
+      "username": "Harita",
+      "password": "password"
+    }
+  ]
 }
